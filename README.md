@@ -17,9 +17,8 @@ const jsonDgram = require('@rainder/json-dgram');
   collector.onMessage = (message, rinfo) => {
     const data = JSON.parse(message.getPayload())
     console.log(data);
-    /** data =
-     * { info: { address: '127.0.0.1', family: 'IPv4', port: 52831 },
-     *   body: { test: 123 } }
+    /** data = 
+     *   { test: 123 } 
      */
   };
 
