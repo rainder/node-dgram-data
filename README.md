@@ -49,7 +49,7 @@ Callback function. Get called whenever all chunks of `Message` are collected.
 ### Message
 #### static createFromBuffer(buffer: Buffer): Message
 #### static createFromObject(object: *): Message
-#### static getPacket(index: Number): Packet
+#### getPacket(index: Number): Packet
 #### send(client: Socket, [port: Number], [host: String]): Promise
 Sends a message to the servers and returns a `Promise`
 
