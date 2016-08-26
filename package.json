@@ -1,0 +1,14 @@
+{
+  "name": "@rainder/json-dgram",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Andrius Skerla",
+  "license": "ISC",
+  "dependencies": {
+    "objectid": "^3.2.1"
+  }
+}
