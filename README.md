@@ -1,6 +1,6 @@
 # JSON Datagram
 
-```json
+```js
 'use strict';
 
 const dgram = require('dgram');
