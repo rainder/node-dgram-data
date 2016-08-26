@@ -7,7 +7,8 @@ const jsonDgram = require('./');
   const server = dgram.createSocket('udp4');
   const collector = new jsonDgram.Collector();
 
-  collector.onMessage = (data) => {
+  collector.onMessage = (message, rinfo) => {
+    const data = JSON.parse(message.getPayload())
     console.log(data);
     /** data =
      * { info: { address: '127.0.0.1', family: 'IPv4', port: 52831 },
