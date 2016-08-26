@@ -18,6 +18,7 @@
   "author": "Andrius Skerla",
   "license": "ISC",
   "dependencies": {
-    "objectid": "^3.2.1"
+    "objectid": "^3.2.1",
+    "skerla-callbacks": "^0.1.3"
   }
 }

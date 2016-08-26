@@ -17,7 +17,7 @@ const jsonDgram = require('./');
   };
 
   server.on('message', (buffer, rinfo) => collector.processBuffer(buffer, rinfo));
-  server.bind(12345, '127.0.0.1');
+  server.bind(12346, '127.0.0.1');
 }
 
 { //client
@@ -27,6 +27,6 @@ const jsonDgram = require('./');
   };
 
   jsonDgram.Message.createFromObject(body)
-    .send(client, 12345, '127.0.0.1')
+    .send(client, 12346, '127.0.0.1')
     .then(result => console.log(result)); //{ bytes_sent: 26 }
 }
