@@ -8,7 +8,7 @@ Data handler for UDP protocol
 'use strict';
 
 const dgram = require('dgram');
-const dgramData = require('@rainder/json-dgram');
+const dgramData = require('@rainder/dgram-data');
 
 { //server
   const server = dgram.createSocket('udp4');
