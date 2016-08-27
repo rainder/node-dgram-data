@@ -1,18 +1,17 @@
 'use strict';
 
 const dgram = require('dgram');
-const jsonDgram = require('./');
+const dgramData = require('./');
 
 { //server
   const server = dgram.createSocket('udp4');
-  const collector = new jsonDgram.Collector();
+  const collector = new dgramData.Collector();
 
   collector.onMessage = (message, rinfo) => {
     const data = JSON.parse(message.getPayload())
     console.log(data);
     /** data =
-     * { info: { address: '127.0.0.1', family: 'IPv4', port: 52831 },
-     *   body: { test: 123 } }
+     *   { test: 123 }
      */
   };
 
@@ -26,7 +25,7 @@ const jsonDgram = require('./');
     test: 123
   };
 
-  jsonDgram.Message.createFromObject(body)
+  dgramData.Message.createFromObject(body)
     .send(client, 12346, '127.0.0.1')
     .then(result => console.log(result)); //{ bytes_sent: 26 }
 }

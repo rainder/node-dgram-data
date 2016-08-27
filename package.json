@@ -1,11 +1,11 @@
 {
-  "name": "@rainder/json-dgram",
+  "name": "@rainder/dgram-data",
   "version": "0.2.1",
   "description": "",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git@github.com:rainder/node-json-dgram.git"
+    "url": "git@github.com:rainder/node-dgram-data.git"
   },
   "keywords": [
     "dgram",

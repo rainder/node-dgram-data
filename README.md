@@ -8,22 +8,22 @@ JSON for UDP
 'use strict';
 
 const dgram = require('dgram');
-const jsonDgram = require('@rainder/json-dgram');
+const dgramData = require('@rainder/json-dgram');
 
 { //server
   const server = dgram.createSocket('udp4');
-  const collector = new jsonDgram.Collector();
+  const collector = new dgramData.Collector();
 
   collector.onMessage = (message, rinfo) => {
     const data = JSON.parse(message.getPayload())
     console.log(data);
-    /** data = 
-     *   { test: 123 } 
+    /** data =
+     *   { test: 123 }
      */
   };
 
   server.on('message', (buffer, rinfo) => collector.processBuffer(buffer, rinfo));
-  server.bind(12345, '127.0.0.1');
+  server.bind(12346, '127.0.0.1');
 }
 
 { //client
@@ -32,8 +32,8 @@ const jsonDgram = require('@rainder/json-dgram');
     test: 123
   };
 
-  jsonDgram.Message.createFromObject(body)
-    .send(client, 12345, '127.0.0.1')
+  dgramData.Message.createFromObject(body)
+    .send(client, 12346, '127.0.0.1')
     .then(result => console.log(result)); //{ bytes_sent: 26 }
 }
 ```
@@ -60,6 +60,6 @@ called whenever all chunks of `Message` ar collected.
 called on timeout
 
 ### Packet
-#### constructor(id: String(12), seq: Number, is_last: Boolean, chunk: Buffer)
+#### constructor(version: Number, id: String(12), seq: Number, is_last: Boolean, chunk: Buffer)
 #### static createFromBuffer(buffer): Packet
 #### toBuffer(): Buffer
