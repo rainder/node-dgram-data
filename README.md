@@ -1,4 +1,4 @@
-# JSON Datagram Data
+# Datagram Data
 
 Data handler for UDP protocol
 
