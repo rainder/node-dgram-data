@@ -1,6 +1,6 @@
-# JSON Datagram
+# JSON Datagram Data
 
-JSON for UDP
+Data handler for UDP protocol
 
 ## Example
 
