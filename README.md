@@ -12,14 +12,14 @@ const dgramData = require('@rainder/json-dgram');
 
 { //server
   const server = dgram.createSocket('udp4');
-  const collector = new dgramData.Collector();
-
-  collector.onMessage = (message, rinfo) => {
-    const data = JSON.parse(message.getPayload())
-    console.log(data);
-    /** data =
-     *   { test: 123 }
-     */
+  const collector = new class extends dgramData.Collector {
+    onMessage(message, rinfo) {
+      const data = JSON.parse(message.getPayload())
+      console.log(data);
+      /** data =
+       *   { test: 123 }
+       */
+    }
   };
 
   server.on('message', (buffer, rinfo) => collector.processBuffer(buffer, rinfo));
